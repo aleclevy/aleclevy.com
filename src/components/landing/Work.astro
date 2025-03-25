@@ -1,35 +1,40 @@
-<section class="border-b border-white/20  bg-accent-500">
-  <div class="mx-auto max-w-7xl border-x border-white/20  px-8 py-12 gradient-grid">
+<section class="border-b border-white/20 bg-accent-500">
+  <div
+    class="mx-auto max-w-7xl border-x border-white/20 px-8 py-12 gradient-grid"
+  >
     <div class="mx-auto">
       <h3 class="text-3xl font-display text-white uppercase">
-        Designed and developed websites at AstroMax
+        Designing and developing interactive tools for academics
       </h3>
     </div>
   </div>
 </section>
-<section class="border-b border-white/20  bg-accent-500">
+<section class="border-b border-white/20 bg-accent-500">
   <div
-    class="mx-auto max-w-7xl border-white/20  border-x"
-    x-data="{ init() {
-            new Splide(this.$refs.splide, {
-
-                perPage: 5,
-                gap: '0rem',
-                breakpoints: {
-                    640: {
-                        perPage: 1,
-                    },
-                },
-
-            }).mount()
-        },
-    }">
+    class="mx-auto max-w-7xl border-white/20 border-x"
+    x-data="{ 
+      init() {
+        new Splide(this.$refs.splide, {
+          perPage: 5,
+          gap: '0rem',
+          breakpoints: {
+            640: {
+              perPage: 1,
+            },
+          },
+        }).mount()
+      },
+      selectedProject: null,
+      showModal: false
+    }"
+  >
     <section
       class="splide is-initialized splide--slide splide--ltr splide--draggable is-active"
       aria-label="Splide/Alpine.js"
       x-ref="splide"
       id="splide01"
-      aria-roledescription="carousel">
+      aria-roledescription="carousel"
+    >
       <div class="splide__arrows splide__arrows--ltr items-center">
         <button
           class="splide__arrow splide__arrow--prev"
@@ -71,196 +76,255 @@
         style="padding-left: 0px; padding-right: 0px;"
         aria-live="polite"
         aria-atomic="true"
-        aria-busy="false">
+        aria-busy="false"
+      >
         <ul
           class="splide__list"
           id="splide01-list"
           role="presentation"
-          style="transform: translateX(-2040px);">
+          style="transform: translateX(-2040px);"
+        >
           <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            class="flex justify-center flex-col splide__slide"
+            @click="selectedProject = 1; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/1.png"
+              src="/aleclevy.com/work/1.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 1</span>
             </div>
           </li>
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide01"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="1 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 2; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/2.png"
+              src="/aleclevy.com/work/2.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 2</span>
             </div>
           </li>
           <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            class="flex justify-center flex-col splide__slide"
+            @click="selectedProject = 3; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/3.png"
+              src="/aleclevy.com/work/3.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 3</span>
             </div>
           </li>
           <li
-            class="flex justify-center flex-col splide__slide is-prev"
-            id="splide01-slide03"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="3 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            class="flex justify-center flex-col splide__slide"
+            @click="selectedProject = 4; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/4.png"
+              src="/aleclevy.com/work/4.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 4</span>
             </div>
           </li>
 
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 5; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black"
-              src="/work/5.png"
+              src="/aleclevy.com/work/5.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-black">
+              class="text-white text-xs order-first p-3 text-center lg:border-black"
+            >
               <span class="block font-semibold">Project 5</span>
             </div>
           </li>
 
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 6; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/6.png"
+              src="/aleclevy.com/work/6.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 6</span>
             </div>
           </li>
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 7; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/7.png"
+              src="/aleclevy.com/work/7.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 7</span>
             </div>
           </li>
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 8; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/8.png"
+              src="/aleclevy.com/work/8.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 8</span>
             </div>
           </li>
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 9; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/9.png"
+              src="/aleclevy.com/work/9.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20 ">
+              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
+            >
               <span class="block font-semibold">Project 9</span>
             </div>
           </li>
           <li
             class="flex justify-center flex-col splide__slide"
-            id="splide01-slide02"
-            role="tabpanel"
-            aria-roledescription="slide"
-            aria-label="2 of 4"
-            style="margin-right: 0.5rem; width: calc(((100% + 0.5rem) / 1) - 0.5rem);"
-            aria-hidden="true">
+            @click="selectedProject = 10; showModal = true"
+            role="button"
+            class="cursor-pointer"
+          >
             <img
               alt="work"
               class="w-full object-cover object-center bg-white border-t border-black"
-              src="/work/10.png"
+              src="/aleclevy.com/work/10.png"
             />
             <div
-              class="text-white text-xs order-first p-3 text-center lg:border-black">
+              class="text-white text-xs order-first p-3 text-center lg:border-black"
+            >
               <span class="block font-semibold">Project 10</span>
             </div>
           </li>
         </ul>
       </div>
     </section>
+
+    <!-- Modal Template -->
+    <div
+      x-show="showModal"
+      x-transition
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+      @click.self="showModal = false"
+    >
+      <div
+        class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-2xl font-bold" x-text="'Project ' + selectedProject">
+          </h3>
+          <button
+            @click="showModal = false"
+            class="text-gray-500 hover:text-gray-700"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Project Content -->
+        <div>
+          <template x-if="selectedProject === 1">
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <img
+                  src="/aleclevy.com/work/1.png"
+                  alt="Project 1"
+                  class="w-full rounded"
+                />
+                <img
+                  src="/aleclevy.com/work/1-detail.png"
+                  alt="Project 1 Detail"
+                  class="w-full rounded"
+                />
+              </div>
+              <div class="prose max-w-none">
+                <h4 class="text-xl font-semibold">Project Title</h4>
+                <p>
+                  Project description goes here. You can add as much detail as
+                  you'd like.
+                </p>
+                <div class="flex gap-4 mt-4">
+                  <a href="#" class="text-blue-600 hover:underline">View Live</a
+                  >
+                  <a href="#" class="text-blue-600 hover:underline">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </template>
+          <!-- Add more templates for other projects -->
+        </div>
+      </div>
+    </div>
   </div>
 </section>

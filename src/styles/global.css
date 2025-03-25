@@ -61,3 +61,42 @@
 /* .splide__pagination {
   visibility: hidden;
 } */
+
+.animated-line {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawSquiggle 2s ease-in-out infinite, moveSquiggle 4s linear infinite, fade 4s ease-in-out infinite;
+}
+
+/* Stroke animation (draws the line) */
+@keyframes drawSquiggle {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Move from right to bottom-middle */
+@keyframes moveSquiggle {
+  0% {
+    transform: translate(100px, 0);
+  }
+  100% {
+    transform: translate(50px, 200px);
+  }
+}
+
+/* Fading effect for smooth transitions */
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+

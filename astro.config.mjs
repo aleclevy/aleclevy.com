@@ -5,8 +5,8 @@ export default defineConfig({
    vite: {
     plugins: [tailwindcss()],
   },
-  // add yur domain name here
-  site: 'https://lexingtonthemes.com',
+  site: 'https://aleclevy.github.io',
+  base: '/aleclevy.com',
   compressHTML: true,
   integrations: [sitemap()]
 });
