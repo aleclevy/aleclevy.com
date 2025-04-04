@@ -96,7 +96,7 @@
             <div
               class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
             >
-              <span class="block font-semibold">Project 1</span>
+              <span class="block font-semibold">DirtViz</span>
             </div>
           </li>
           <li
@@ -151,109 +151,7 @@
             </div>
           </li>
 
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 5; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black"
-              src="/aleclevy.com/work/5.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-black"
-            >
-              <span class="block font-semibold">Project 5</span>
-            </div>
-          </li>
-
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 6; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/aleclevy.com/work/6.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 6</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 7; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/aleclevy.com/work/7.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 7</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 8; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/aleclevy.com/work/8.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 8</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 9; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/aleclevy.com/work/9.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 9</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 10; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black"
-              src="/aleclevy.com/work/10.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-black"
-            >
-              <span class="block font-semibold">Project 10</span>
-            </div>
-          </li>
+         
         </ul>
       </div>
     </section>
@@ -303,6 +201,62 @@
                 <img
                   src="/aleclevy.com/work/1-detail.png"
                   alt="Project 1 Detail"
+                  class="w-full rounded"
+                />
+              </div>
+              <div class="prose max-w-none">
+                <h4 class="text-xl font-semibold">DirtViz</h4>
+                <p>
+                  Project description goes here. You can add as much detail as
+                  you'd like.
+                </p>
+                <div class="flex gap-4 mt-4">
+                  <a href="#" class="text-blue-600 hover:underline">View Live</a
+                  >
+                  <a href="#" class="text-blue-600 hover:underline">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </template>
+          <template x-if="selectedProject === 2">
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <img
+                  src="/aleclevy.com/work/2.png"
+                  alt="Project 2"
+                  class="w-full rounded"
+                />
+                <img
+                  src="/aleclevy.com/work/2-detail.png"
+                  alt="Project 2 Detail"
+                  class="w-full rounded"
+                />
+              </div>
+              <div class="prose max-w-none">
+                <h4 class="text-xl font-semibold">Project Title</h4>
+                <p>
+                  Project description goes here. You can add as much detail as
+                  you'd like.
+                </p>
+                <div class="flex gap-4 mt-4">
+                  <a href="#" class="text-blue-600 hover:underline">View Live</a
+                  >
+                  <a href="#" class="text-blue-600 hover:underline">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </template>
+          <template x-if="selectedProject === 3">
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <img
+                  src="/aleclevy.com/work/3.png"
+                  alt="Project 3"
+                  class="w-full rounded"
+                />
+                <img
+                  src="/aleclevy.com/work/3-detail.png"
+                  alt="Project 2 Detail"
                   class="w-full rounded"
                 />
               </div>
