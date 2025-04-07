@@ -6,24 +6,23 @@
   --color-orange: #ea4125;
 }
 .font-display {
-  font-family: Basement, sans-serif;
-  font-weight: 700;
+  font-family: 'Coolvetica';
+  font-style: italic;
+  font-weight: 100;
 }
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('/fonts/Coolvetica RG.otf') format('opentype');
+  font-weight: 700;
+  font-style: Italic;
+}
+
 @supports (font-variation-settings: normal) {
   /* Use variable font if supported */
   :root {
     font-family: InterVariable, sans-serif;
   }
-}
-@font-face {
-  font-family: "Basement";
-  src: url("../fonts/BSBlack.eot");
-  src: url("../fonts/BSBlack.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/BSBlack.woff2") format("woff2"),
-    url("../fonts/BSBlack.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  descent-override: 0%;
 }
 @keyframes marquee {
   0% {
