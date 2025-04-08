@@ -13,9 +13,9 @@
 
 @font-face {
   font-family: 'Coolvetica';
-  src: url('/fonts/coolvetica-rg.otf') format('opentype');
+  src: url('/fonts/coolvetica-rg-it.otf') format('opentype');
   font-weight: 700;
-  font-style: Italic;
+  font-style: normal;
 }
 
 @supports (font-variation-settings: normal) {
