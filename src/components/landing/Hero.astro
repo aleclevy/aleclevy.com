@@ -1,36 +1,46 @@
-<section class="border-black border-b">
-  <div class="mx-auto border-black border-x max-w-7xl">
-    <div class="mx-auto">
-      <div class="mx-auto lg:pt-28 h-96 bg-[linear-gradient(to-bottom,_#0000_1px,_transparent_1px)] bg-[length:100%_20px] px-8 py-12">
-        <h2 class="text-black font-display uppercase text-4xl lg:text-7xl">
-          Hey there, I'm
-        </h2>
-        <h1 class="text-black font-display uppercase text-9xl lg:text-9xl">
-          Alec Levy
-        </h1>
-        <p class="text-black font-display uppercase text-xl lg:text-3xl"></p>
-      </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center relative z-10">
+  <div class="space-y-8 animate-fadeIn">
+    <!-- Main heading with subtle styling -->
+    <div class="space-y-4">
+      <h2 class="text-lg md:text-xl text-tan-light font-medium tracking-wide uppercase">
+        Full Stack Developer
+      </h2>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display text-white tracking-tight">
+        Alec Levy
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+        Building modern web applications with clean code and thoughtful design
+      </p>
+    </div>
+
+    <!-- CTA buttons with subtle styling -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+      <a
+        href="#work"
+        class="inline-flex items-center px-8 py-4 rounded-lg text-base font-medium text-white bg-orange hover:bg-orange-dark transition-all transform hover:scale-105"
+      >
+        View My Work
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+      <a
+        href="#contact"
+        class="inline-flex items-center px-8 py-4 border-2 border-tan/30 rounded-lg text-base font-medium text-tan-light bg-transparent hover:bg-tan/10 transition-all"
+      >
+        Get In Touch
+      </a>
+    </div>
+
+    <!-- Animated scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-tan/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
     </div>
   </div>
-  <style>
-    .wave-line {
-      width: 100%;
-      position: absolute;
-      top: 43%;
-      left: 0;
-      transform: rotate(45deg);
-      z-index: -1;
-    }
-    .wave-line .line {
-      position: absolute;
-      width: 100%;
-      height: 130px;
-    }
-    .wave-line .line1 {
-      background: .url(public/work/Vector 1.svg);
-      background-size: contain;
-      animation: lineOne 30s linear infinite;
-    }
-  </style>
-</section>
 
+  <!-- Subtle floating shapes -->
+  <div class="absolute top-20 left-10 w-24 h-24 bg-orange/10 rounded-full blur-2xl animate-float"></div>
+  <div class="absolute bottom-20 right-10 w-32 h-32 bg-tan/10 rounded-full blur-2xl animate-float" style="animation-delay: 2s;"></div>
+</div>

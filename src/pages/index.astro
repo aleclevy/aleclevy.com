@@ -4,93 +4,145 @@ import Work from "@/components/landing/Work.astro";
 import Intro from "@/components/landing/Intro.astro";
 import Cta from "@/components/landing/Cta.astro";
 import BaseHead from "@/components/BaseHead.astro";
-import Navigation from "@/components/global/Navigation.astro"
+import Navigation from "@/components/global/Navigation.astro";
+import Footer from "@/components/global/Footer.astro";
 ---
 
-<html lang="en" class="selection:bg-orange selection:text-white">
+<html lang="en" class="scroll-smooth">
   <head><BaseHead /></head>
 
-  <body>
-    <Navigation/>
+  <body class="bg-black text-white overflow-x-hidden">
+    <Navigation />
 
-    <article class="scroll-wrapper">
-      <section class="scroll-section">
+    <!-- Snap scroll container -->
+    <div class="snap-container">
+      <!-- Hero Section -->
+      <section class="snap-section relative min-h-screen flex items-center justify-center">
         <Hero />
-        <Intro />
-
       </section>
-      <section class="scroll-section">
+
+      <!-- Introduction Section -->
+      <section class="snap-section relative min-h-screen flex items-center">
+        <Intro />
+      </section>
+
+      <!-- Work Section -->
+      <section class="snap-section relative min-h-screen flex items-center py-24">
         <Work />
       </section>
-      <section class="scroll-section">
-      </section>
-      <section class="scroll-section">
+
+      <!-- CTA Section -->
+      <section class="snap-section relative min-h-screen flex items-center">
         <Cta />
       </section>
 
-      <style>
-        .scroll-wrapper {
-          height: 100vh;
-          height: 100dvh;
-          overflow-y: scroll;
-          scroll-snap-type: y mandatory;
-        }
-        .scroll-section {
-          height: 100%;
-          background-color: #577;
-          scroll-snap-align: start;
-          &:nth-child(1) {
-            background-color: #ebe2cc;
-          }
-          &:nth-child(2) {
-            background: #ebe2cc;
-            background: -webkit-linear-gradient(
-              180deg,
-              rgba(235, 226, 204, 1) 0%,
-              rgba(212, 207, 194, 1) 56%,
-              rgba(188, 183, 172, 1) 77%,
-              rgba(125, 121, 114, 1) 100%
-            );
-            background: -moz-linear-gradient(
-              180deg,
-              rgba(235, 226, 204, 1) 0%,
-              rgba(212, 207, 194, 1) 56%,
-              rgba(188, 183, 172, 1) 77%,
-              rgba(125, 121, 114, 1) 100%
-            );
-            background: linear-gradient(
-              180deg,
-              rgba(235, 226, 204, 1) 0%,
-              rgba(212, 207, 194, 1) 56%,
-              rgba(188, 183, 172, 1) 77%,
-              rgba(125, 121, 114, 1) 100%
-            );
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#EBE2CC", endColorstr="#7D7972", GradientType=0);
-          }
-          &:nth-child(3) {
-            background: #7d7972;
-            background: -webkit-linear-gradient(
-              180deg,
-              rgba(125, 121, 114, 1) 0%,
-              rgba(30, 30, 30, 1) 77%
-            );
-            background: -moz-linear-gradient(
-              180deg,
-              rgba(125, 121, 114, 1) 0%,
-              rgba(30, 30, 30, 1) 77%
-            );
-            background: linear-gradient(
-              180deg,
-              rgba(125, 121, 114, 1) 0%,
-              rgba(30, 30, 30, 1) 77%
-            );
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7D7972", endColorstr="#1E1E1E", GradientType=0);
-          }
-          &:nth-child(4) {
-            background-color: #1e1e1e;
-          }
-        }
-      </style>
-    </article>
+      <!-- Footer -->
+      <section class="relative">
+        <Footer />
+      </section>
+    </div>
+
+    <style>
+      /* Main gradient background - tan to black */
+      body {
+        background: linear-gradient(
+          180deg,
+          #d2b48c 0%,
+          #c19a6b 20%,
+          #8b6839 40%,
+          #4a3a28 60%,
+          #1a1410 80%,
+          #000000 100%
+        );
+        background-attachment: fixed;
+      }
+
+      /* Snap scrolling setup */
+      .snap-container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+      }
+
+      .snap-section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+        width: 100%;
+      }
+
+      /* Section backgrounds with subtle glass effect */
+      .snap-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1px);
+        z-index: -1;
+      }
+
+      /* Hide scrollbar but keep functionality */
+      .snap-container {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 107, 53, 0.5) transparent;
+      }
+
+      .snap-container::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .snap-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .snap-container::-webkit-scrollbar-thumb {
+        background: rgba(255, 107, 53, 0.5);
+        border-radius: 4px;
+      }
+
+      .snap-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 107, 53, 0.7);
+      }
+
+      /* Subtle background accents */
+      .accent-shape {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.1;
+        pointer-events: none;
+      }
+
+      .accent-1 {
+        width: 300px;
+        height: 300px;
+        background: #ff6b35;
+        top: 10%;
+        left: -150px;
+      }
+
+      .accent-2 {
+        width: 400px;
+        height: 400px;
+        background: #d2b48c;
+        top: 50%;
+        right: -200px;
+      }
+
+      .accent-3 {
+        width: 350px;
+        height: 350px;
+        background: #ff6b35;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+
+    <!-- Subtle background accents -->
+    <div class="accent-shape accent-1"></div>
+    <div class="accent-shape accent-2"></div>
+    <div class="accent-shape accent-3"></div>
   </body>
 </html>

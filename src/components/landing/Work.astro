@@ -1,177 +1,62 @@
-<section class="border-b border-black bg-accent-500">
-  <div class="mx-auto max-w-7xl border-x border-black px-8 py-12 gradient-grid">
-    <div class="mx-auto">
-      <h1 class="text-7xl font-display text-black uppercase">My Latest Work </h1>
-    </div>
+<div
+  id="work"
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full"
+>
+  <div class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-display text-white mb-4">
+      Featured Projects
+    </h2>
+    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+      A selection of my recent work showcasing full-stack development and
+      problem-solving skills
+    </p>
   </div>
-</section>
-<section class="border-b border-black bg-accent-500">
-  <div
-    class="mx-auto max-w-7xl border-black border-x"
-    x-data="{ 
-      init() {
-        new Splide(this.$refs.splide, {
-          perPage: 5,
-          gap: '0rem',
-          breakpoints: {
-            640: {
-              perPage: 1,
-            },
-          },
-        }).mount()
-      },
-      selectedProject: null,
-      showModal: false
-    }"
-  >
-    <section
-      class="splide is-initialized splide--slide splide--ltr splide--draggable is-active"
-      aria-label="Splide/Alpine.js"
-      x-ref="splide"
-      id="splide01"
-      aria-roledescription="carousel"
-    >
-      <div class="splide__arrows splide__arrows--ltr items-center">
-        <button
-          class="splide__arrow splide__arrow--prev"
-          type="button"
-          aria-label="Previous slide"
-          aria-controls="splide01-track"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 40 40"
-            width="40"
-            height="40"
-            focusable="false"
-            ><path
-              d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"
-            ></path></svg
-          ></button
-        >
-        <button
-          class="splide__arrow splide__arrow--next"
-          type="button"
-          disabled=""
-          aria-label="Next slide"
-          aria-controls="splide01-track"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 40 40"
-            width="40"
-            height="40"
-            focusable="false"
-            ><path
-              d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"
-            ></path></svg
-          ></button
-        >
-      </div>
-      <div
-        class="h-full splide__track splide__track--slide splide__track--ltr splide__track--draggable"
-        id="splide01-track"
-        style="padding-left: 0px; padding-right: 0px;"
-        aria-live="polite"
-        aria-atomic="true"
-        aria-busy="false"
-      >
-        <ul
-          class="splide__list"
-          id="splide01-list"
-          role="presentation"
-          style="transform: translateX(-2040px);"
-        >
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 1; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="./public/work/DIRTVIZ_PROJ.svg"
-              />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">DirtViz</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 2; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="./public/work/2.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 2</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 3; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="./public/work/3.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 3</span>
-            </div>
-          </li>
-          <li
-            class="flex justify-center flex-col splide__slide"
-            @click="selectedProject = 4; showModal = true"
-            role="button"
-            class="cursor-pointer"
-          >
-            <img
-              alt="work"
-              class="w-full object-cover object-center bg-white border-t border-black lg:border-r"
-              src="/work/4.png"
-            />
-            <div
-              class="text-white text-xs order-first p-3 text-center lg:border-r lg:border-white/20"
-            >
-              <span class="block font-semibold">Project 4</span>
-            </div>
-          </li>
 
-         
-        </ul>
-      </div>
-    </section>
-
-    <!-- Modal Template -->
+  <!-- Projects Grid -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- DirtViz Project -->
     <div
-      x-show="showModal"
-      x-transition
-      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
-      @click.self="showModal = false"
+      class="group relative glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 border border-white/10 hover:border-tan/30"
     >
       <div
-        class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6"
+        class="aspect-video bg-gradient-to-br from-tan/10 to-orange/10 overflow-hidden"
       >
-        <div class="flex justify-between items-center mb-4">
-          </h3>
-          <button
-            @click="showModal = false"
-            class="text-gray-500 hover:text-gray-700"
+        <img
+          src="/work/DIRTVIZ_PROJ.svg"
+          alt="DirtViz Project"
+          class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold text-white mb-2">DirtViz</h3>
+        <p class="text-gray-300 mb-4">
+          Hardware and software ecosystem for outdoor sensor networks, featuring
+          real-time data visualization and analysis.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >React</span
           >
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >Node.js</span
+          >
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >IoT</span
+          >
+        </div>
+        <div class="flex gap-4">
+          <a
+            href="https://dirtviz.jlab.ucsc.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-orange-light hover:text-white font-medium text-sm inline-flex items-center group"
+          >
+            View Live
             <svg
-              class="w-6 h-6"
+              class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -180,96 +65,79 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
             </svg>
-          </button>
+          </a>
+          <a
+            href="https://github.com/jlab-sensing/ENTS-backend"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-white font-medium text-sm inline-flex items-center"
+          >
+            GitHub
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              ></path>
+            </svg>
+          </a>
         </div>
+      </div>
+    </div>
 
-        <!-- Project Content -->
-        <div>
-          <template x-if="selectedProject === 1">
-            <div class="space-y-4">
-              <div class="grid grid-cols-2 gap-4">
-                <img
-                  src="/work/DIRTVIZ_PROJ.svg"
-                  alt="DirtViz"
-                  class="w-full rounded"
-                />
-              </div>
-              <div class="prose max-w-none">
-                <h4 class="text-xl font-semibold">DirtViz</h4>
-                <p>
-                  DirtViz is a hardware and software ecosystem tailored for outdoor sensor networks. Our hardware component, the EnTS Node, collects data from sensor measurements in the field. Our data ingestion and visualization backend, the EnTs Backend, receives data from the hardware nodes and presents it in an easy-to-use web interface that allows users to dynamically generate plots, or download data for offline processing. We have deployed a number of sensors measuring qualities like soil moisture, temperature, current and voltage in outdoors settings.
+    <!-- Placeholder Project 2 -->
+    <div
+      class="group relative glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 border border-white/10 hover:border-tan/30"
+    >
+      <div
+        class="aspect-video gradient-subtle flex items-center justify-center"
+      >
+        <span class="text-white/40 text-sm">Coming Soon</span>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold text-white mb-2">Project Name</h3>
+        <p class="text-gray-300 mb-4">
+          Description of your next amazing project will go here.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >React</span
+          >
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >TypeScript</span
+          >
+        </div>
+      </div>
+    </div>
 
-
-                </p>
-                <div class="flex gap-4 mt-4">
-                  <a href="https://dirtviz.jlab.ucsc.edu" target="_blank" class="text-blue-600 hover:underline">View Live</a
-                  >
-                  <a href="https://github.com/jlab-sensing/ENTS-backend" target="_blank" class="text-blue-600 hover:underline">GitHub</a>
-                </div>
-              </div>
-            </div>
-          </template>
-          <template x-if="selectedProject === 2">
-            <div class="space-y-4">
-              <div class="grid grid-cols-2 gap-4">
-                <img
-                  src="/work/2.png"
-                  alt="Project 2"
-                  class="w-full rounded"
-                />
-                <img
-                  src="/work/2-detail.png"
-                  alt="Project 2 Detail"
-                  class="w-full rounded"
-                />
-              </div>
-              <div class="prose max-w-none">
-                <h4 class="text-xl font-semibold">Project Title</h4>
-                <p>
-                  Project description goes here. You can add as much detail as
-                  you'd like.
-                </p>
-                <div class="flex gap-4 mt-4">
-                  <a href="#" class="text-blue-600 hover:underline">View Live</a
-                  >
-                  <a href="#" class="text-blue-600 hover:underline">GitHub</a>
-                </div>
-              </div>
-            </div>
-          </template>
-          <template x-if="selectedProject === 3">
-            <div class="space-y-4">
-              <div class="grid grid-cols-2 gap-4">
-                <img
-                  src="/work/3.png"
-                  alt="Project 3"
-                  class="w-full rounded"
-                />
-                <img
-                  src="/work/3-detail.png"
-                  alt="Project 2 Detail"
-                  class="w-full rounded"
-                />
-              </div>
-              <div class="prose max-w-none">
-                <h4 class="text-xl font-semibold">Project Title</h4>
-                <p>
-                  Project description goes here. You can add as much detail as
-                  you'd like.
-                </p>
-                <div class="flex gap-4 mt-4">
-                  <a href="#" class="text-blue-600 hover:underline">View Live</a
-                  >
-                  <a href="#" class="text-blue-600 hover:underline">GitHub</a>
-                </div>
-              </div>
-            </div>
-          </template>
-          <!-- Add more templates for other projects -->
+    <!-- Placeholder Project 3 -->
+    <div
+      class="group relative glass rounded-xl overflow-hidden hover:scale-105 transition-all duration-300 border border-white/10 hover:border-tan/30"
+    >
+      <div
+        class="aspect-video gradient-orange-black opacity-50 flex items-center justify-center"
+      >
+        <span class="text-white/40 text-sm">Coming Soon</span>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold text-white mb-2">Project Name</h3>
+        <p class="text-gray-300 mb-4">
+          Description of your next amazing project will go here.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >Python</span
+          >
+          <span
+            class="text-xs px-2 py-1 bg-tan/10 text-tan-light rounded border border-tan/20"
+            >Django</span
+          >
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
