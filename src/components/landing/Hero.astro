@@ -1,11 +1,17 @@
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center relative z-10">
-  <div class="space-y-8 animate-fadeIn">
+<div
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center relative z-10"
+>
+  <div class="space-y-8 animate-fadeIn relative z-10">
     <!-- Main heading with subtle styling -->
     <div class="space-y-4">
-      <h2 class="text-lg md:text-xl text-tan-light font-medium tracking-wide uppercase">
+      <h2
+        class="text-lg md:text-xl text-tan-light font-medium tracking-wide uppercase"
+      >
         Full Stack Developer
       </h2>
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display text-white tracking-tight">
+      <h1
+        class="text-5xl md:text-7xl lg:text-8xl font-display text-white tracking-tight"
+      >
         Alec Levy
       </h1>
       <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
@@ -14,14 +20,25 @@
     </div>
 
     <!-- CTA buttons with subtle styling -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+    <div
+      class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+    >
       <a
         href="#work"
         class="inline-flex items-center px-8 py-4 rounded-lg text-base font-medium text-white bg-orange hover:bg-orange-dark transition-all transform hover:scale-105"
       >
         View My Work
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        <svg
+          class="ml-2 w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
         </svg>
       </a>
       <a
@@ -32,15 +49,79 @@
       </a>
     </div>
 
-    <!-- Animated scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-tan/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
+  </div>
+  
+  <!-- Animated scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
+  >
+    <svg
+      class="w-6 h-6 text-tan/60"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+
+  <!-- Animated squiggly line -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="squiggleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.4"></stop>
+          <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.7"></stop>
+          <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.4"
+          ></stop>
+        </linearGradient>
+      </defs>
+      <path
+        d="M-50,50 Q-25,35 0,50 T50,50 T100,50 T150,50"
+        stroke="url(#squiggleGradient)"
+        stroke-width="0.8"
+        fill="none"
+        stroke-linecap="round"
+        class="squiggle-line"></path>
+    </svg>
   </div>
 
   <!-- Subtle floating shapes -->
-  <div class="absolute top-20 left-10 w-24 h-24 bg-orange/10 rounded-full blur-2xl animate-float"></div>
-  <div class="absolute bottom-20 right-10 w-32 h-32 bg-tan/10 rounded-full blur-2xl animate-float" style="animation-delay: 2s;"></div>
+  <div
+    class="absolute top-20 left-10 w-24 h-24 bg-orange/10 rounded-full blur-2xl animate-float"
+  >
+  </div>
+  <div
+    class="absolute bottom-20 right-10 w-32 h-32 bg-tan/10 rounded-full blur-2xl animate-float"
+    style="animation-delay: 2s;"
+  >
+  </div>
 </div>
+
+<style>
+  .squiggle-line {
+    transform-origin: center;
+    animation: flowSquiggle 4s linear infinite;
+  }
+
+  @keyframes flowSquiggle {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+</style>
