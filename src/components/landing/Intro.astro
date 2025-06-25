@@ -1,5 +1,6 @@
 ---
-const avatarImage = import.meta.env.BASE_URL ? `${import.meta.env.BASE_URL}/avatars/1.JPG` : '/avatars/1.JPG';
+// BASE_URL is always '/aleclevy.com/' from astro.config.mjs
+const avatarImage = `${import.meta.env.BASE_URL}/avatars/1.JPG`;
 ---
 
 <div id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
