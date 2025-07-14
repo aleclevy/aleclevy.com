@@ -15,32 +15,30 @@ import Footer from "@/components/global/Footer.astro";
     <Navigation />
 
     <!-- Snap scroll container -->
-    <div class="snap-container">
-      <!-- Hero Section -->
-      <section class="snap-section relative min-h-screen flex items-center justify-center">
-        <Hero />
-      </section>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <Hero />
+    </section>
 
-      <!-- Introduction Section -->
-      <section class="snap-section relative min-h-screen flex items-center">
-        <Intro />
-      </section>
+    <!-- Introduction Section -->
+    <section class="relative min-h-screen flex items-center">
+      <Intro />
+    </section>
 
-      <!-- Work Section -->
-      <section class="snap-section relative min-h-screen flex items-center py-24">
-        <Work />
-      </section>
+    <!-- Work Section -->
+    <section class="relative min-h-screen flex items-center py-24">
+      <Work />
+    </section>
 
-      <!-- CTA Section -->
-      <section class="snap-section relative min-h-screen flex items-center">
-        <Cta />
-      </section>
+    <!-- CTA Section -->
+    <section class="relative min-h-screen flex items-center">
+      <Cta />
+    </section>
 
-      <!-- Footer -->
-      <section class="snap-section relative">
-        <Footer />
-      </section>
-    </div>
+    <!-- Footer -->
+    <section class="relative">
+      <Footer />
+    </section>
 
     <style>
       /* Main gradient background - tan to black */
@@ -74,7 +72,7 @@ import Footer from "@/components/global/Footer.astro";
 
       /* Section backgrounds with subtle glass effect */
       .snap-section::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: 0;
         background: rgba(0, 0, 0, 0.1);
